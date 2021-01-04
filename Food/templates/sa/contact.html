@@ -1,0 +1,31 @@
+{% extends 'sa/base.html' %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+<div class="container col-md-10">
+	{% if messages %}
+	{% for k in messages %}
+	<div class="alert alert-{{m.tags}} alert-dismissible">
+  		<button type="button" class="close" data-dismiss="alert">&times;</button>
+  			<strong>{{k}}</strong>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="card mt-5 shadow-lg">
+		<h2 class="bg-info text-white text-center mx-4 mt-3 border rounded p-2">Contact Us</h2>
+		<h2 class="ml-4" style="font-family:Californian FB;font-size:20px">Email us with any questions or inquires or call ******4321.<br/>If you have any issue please contact me...</h2>
+		<div class="card-body">
+			<form method="post">
+				{% csrf_token %}
+			<table class="table table-borderless">
+					{% for i in t %}
+					<tr>
+						<td>{{i}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			<input type="submit" name="Register" class="btn btn-block btn-primary">
+		</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'sa/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content%}
+{% load static %}
+<div class="container-fluid mt-4 mb-4">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" style="box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);">
+    <div class="carousel-item active">
+      <img src="{% static 'images/mobile1.jpg' %}" class="d-block w-20 shadow-lg" style="width:1000px;height:350px" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/mobile2.jpg' %}" class="d-block w-20 shadow-lg" style="width:1000px;height:350px" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/download4.jpg' %}" class="d-block w-20 shadow-lg" style="width:1000px;height:350px"  alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-muted">Third slide label</h5>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+  <div class=" row  mt-4 mb-2 shadow-lg mr-0">
+  <div class="col-md">
+  	<img src="{% static 'images/food3.jpg' %}" class="rounded-circle mt-2" style="width:200px;height:200px">
+  	<h2>hii i am 1</h2>
+  </div>
+  <div class="col-md">
+  	<img src="{% static 'images/food5.jpg' %}" class="rounded-circle mt-2" style="width:200px;height:200px;margin-left:50px">
+  	<h2>hii i am 2</h2>
+  </div>
+  <div class="col-md">
+  	<img src="{% static 'images/food6.jpg' %}" class="rounded-circle mt-2 float-right" style="width:200px;height:200px;margin-left:50px">
+  	<h2>hii i am 3</h2>
+  </div>
+  <br/>
+  <br/>
+  <div class="col-md"style="margin-left:110px">
+  	<img src="{% static 'images/food3.jpg' %}" class="rounded-circle mt-2 mt-2 mb-5" style="width:200px;height:200px;margin-left:50px">
+  	<h2>hii i am 4</h2>
+  </div>
+  <div class="col-md" style="margin-left:90px">
+  	<img src="{% static 'images/food3.jpg' %}" class="rounded-circle mt-2 mb-5"style="width:200px;height:200px">
+  	<h2>hii i am 5</h2>
+  </div>
+</div>
+</div>
+
+
+<div class="card-deck mt-5">
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/homes.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">South Indian Dishes</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <a href="{% url 'south' %}" class="btn btn-primary stretched-link">Select</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/homen.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">North Indian Dishes</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <a href="{% url 'chane' %}" class="btn btn-primary stretched-link">Select</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/homeh.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Hyderabad Dishes</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longe.</p>
+      <a href="{% url 'hyd' %}" class="btn btn-primary stretched-link">Select</a>
+    </div>
+  </div>
+</div>
+
+
+<body style="overflow-x: hidden";>
+	<div class="container-fluid bg-dark mt-5" style="font-size:15px" >
+			<div class="container p-0">
+				<div class=" container-fluid row text-left">
+					<div class="col-md-5 col-d-5">
+						<h1 class="text-light">About us</h1>
+						<div class="text-muted">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+					</div>
+					<div class="pt-4 text-muted">
+			<p>Copyright © 2008 Inc. All rights reserved.Daily Tution</p>
+		</div>
+</div>
+<div class="col-md-5">
+	<h1></h1>
+	<h2></h2>
+	<h3></h3>
+	<div class="text-light">
+	<h4 >Newsletter</h4>
+</div>
+	<div class="text-muted">
+	<p >Stay Updtaed</p>
+</div>
+	<form class="form-inline">
+		<div class="col ">
+			<div class="input-group pr-5">
+				
+        <label for="email">Email</label>
+        <input id="email" type="text" required>
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="col-md-2  col-sm-12">
+	<div class="text-light">
+	<h4>Follow us</h4>
+</div>
+	<div class="text-muted">
+	<p>let us be social</p>
+</div>
+	<div class="column">
+
+						<span class="fa fa-facebook text-white" aria-hidden="true"></span>
+						<i class="fa fa-google text-white" aria-hidden="true"></i>
+						<i class="fa fa-twitter text-white" aria-hidden="true"></i>
+						<i class="fa fa-instagram text-white" aria-hidden="true"></i>
+						<i class="fa fa-youtube-play text-white" aria-hidden="true"></i>
+						<i class="fa fa-whatsapp text-white" aria-hidden="true"></i>
+
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+{% endblock %}

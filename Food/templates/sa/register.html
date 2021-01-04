@@ -1,0 +1,28 @@
+{% extends 'sa/base.html' %}
+{% block title %} Registration{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-3">
+	<div class="row mt-5 mb-5 shadow-lg">
+	<div class="col-lg-6 p-3">
+	<img src="{% static 'images/background1.jpg' %}" alt="logo" style="width:470px;height:500px" class="mt-3 ml-2">
+</div>
+	<div class=" col-md-5 mx-auto mt-3 mb-3">
+		<div class="card-body mx-1">
+			<h2 style="font-family:Californian FB" class=" text-center my-2">Registration Form</h2>
+			<form method="POST">
+				{% csrf_token %}
+				<table class="table table-borderless">
+					{% for i in t %}
+					<tr>
+						<td>{{i}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<input type="submit" class="form-control text-white btn btn-info" name="Subscribe" value="subsribe">	
+			</form>	
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

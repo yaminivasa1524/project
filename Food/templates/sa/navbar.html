@@ -1,0 +1,60 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm p-0 " style="background-color: #00bfff;padding-bottom:0px">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{% url 'hm' %}">
+    <img src="{% static 'images/foodie3.jpg' %}" alt="logo" style="width:50px;background-color:#00bfff;" class="rounded-circle">
+  </a>
+  <nav class="navbar navbar-expand-sm">
+  <ul class="navbar-nav">
+    {% if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'hm' %}"> <span class="fas fa-home " style="color:white"> Home</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ct' %}"> <span class="fas fa-envelope " style="color:white"> Contact Us</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'regi' %}"> <span class="far fa-registered" style='font-size:17px;color:white'> Registration</span></a>
+    </li>
+    <li class="nav-item" style="margin-left:400px">
+      <a class="nav-link" href="{% url 'ct' %}"><span class="fas fa-shopping-cart " style="color:white"></span></a>
+    </li>
+    {% else %}
+     <li class="nav-item">
+      <a class="nav-link" href="{% url 'hm' %}"><span class="fas fa-home" style="color:white"> Home</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'wk' %}"style="color:white"><span class="fa fa-tachometer"> Dashboard</span></a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown"style="color:white">Categorie</a>
+      <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'south' %}">South India Recepies</a>
+      <a class="dropdown-item" href="{% url 'chane' %}">North India Recepies</a>
+      <a class="dropdown-item" href="{% url 'hyd' %}">Hyderabad Recepies</a>
+    </li>
+
+  
+     <!--  <a class="nav-link" href="#"style="color:white"><span class="fa fa-search"></span></a> -->
+    </li>
+    {% endif %}
+   </ul>
+  <ul class="nav navbar-nav navbar-right" style="float-right:100px">
+    {% if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'lgn' %}" style="color:white">
+<span class='fas fa-sign-in-alt'> Login</span></a>
+    </li>
+    {% else %}
+    <li class="nav-item dropdown"style="margin-left:550px">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown"href="{% url 'pfe' %}"><img src="{% static 'images/download.png' %}"  height="23px" width="25px" class="rounded-circle"></a>
+      <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'pfe' %}">Profile</a>
+      <a class="dropdown-item" href="#">Change Password</a>
+      <a class="dropdown-item" href="{% url 'lgo' %}">Logout</a>
+      </div>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+</nav>

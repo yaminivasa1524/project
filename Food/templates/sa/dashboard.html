@@ -1,0 +1,21 @@
+{% extends 'sa/base.html' %}
+{% block title %}Dashboard {% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-4">
+	{% if messages %}
+	{% for k in messages %}
+	<div class="alert alert-{{k.tags}} alert-dismissible">
+  		<button type="button" class="close" data-dismiss="alert">&times;</button>{{k}}
+  	</div>
+	{% endfor %}
+	{% endif %}
+	
+<div class="container">
+  <div class="center">
+    <a class="btn btn-sm btn-primary mt-4 text-dark"  href="{% url 'south' %}"style="margin-left:40%;font-family:Lucida Handwriting;border-radius:50px;background-image: linear-gradient(skyblue,white);"> South Indian Recepies </a>
+    <a class="btn btn-sm btn-primary mt-4 text-dark"  href="{% url 'chane' %}"style="margin-left:40%;font-family:Lucida Handwriting;border-radius:50px;background-image: linear-gradient(skyblue,white);"> North Indian Recepies </a>
+    <a class="btn btn-sm btn-primary mt-4 text-dark"  href="{% url 'hyd' %}"style="margin-left:40%;font-family:Lucida Handwriting;border-radius:50px;background-image: linear-gradient(skyblue,white);"> Hyderabad  Recepies </a>
+  </div>
+</div>
+{% endblock %}
