@@ -6,13 +6,13 @@ from django.dispatch import receiver
 # Create your models here.
 class Exfd(models.Model):
 	g =[('M','Male'),('FM','FeMale')]
-	clg = [('AANM',"AANM & VVRSR Polytechnic"),('SVGP',"S.V Govt polytechnic"),('AANMR',"AANM & VVRSR Polytechnic - RJYD")]
+	# clg = [('AANM',"AANM & VVRSR Polytechnic"),('SVGP',"S.V Govt polytechnic"),('AANMR',"AANM & VVRSR Polytechnic - RJYD")]
 	d = models.OneToOneField(User,on_delete=models.CASCADE)
 	age = models.IntegerField(null=True)
 	gender = models.CharField(choices=g,max_length=10)
-	rollno = models.CharField(max_length=10)
-	collegename = models.CharField( max_length= 7,choices=clg)
-	impf = models.ImageField(upload_to="Profile/",default="background1.jpg")
+	# rollno = models.CharField(max_length=10)
+	# collegename = models.CharField( max_length= 7,choices=clg)
+	impf = models.ImageField(upload_to="Profile/",default="bulb.jpg")
 
 
 @receiver(post_save,sender=User)

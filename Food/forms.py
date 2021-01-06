@@ -33,9 +33,12 @@ class Usregis(UserCreationForm):
 		}
 
 class ContactForm(forms.Form):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    from_email = forms.EmailField(required=True,widget= forms.EmailInput
+                           (attrs={'placeholder':'Enter your email id'}))
+    subject = forms.CharField(required=True,widget= forms.TextInput
+                           (attrs={'placeholder':'Enter your name'}))
+    message = forms.CharField(required=True,widget=forms.Textarea
+    	                   (attrs={'placeholder':'Enter your issue....'}))
 
 class Upd(forms.ModelForm):
 	class Meta:
@@ -59,7 +62,7 @@ class Upd(forms.ModelForm):
 class Pad(forms.ModelForm):
 	class Meta:
 		model = Exfd
-		fields = ["age","gender","impf","rollno","collegename"]
+		fields = ["age","gender","impf"]
 		widgets = {
 		"age":forms.NumberInput(attrs={
 			"class":"form-control",
@@ -67,13 +70,13 @@ class Pad(forms.ModelForm):
 		"gender":forms.Select(attrs={
 			"class":"form-control",
 			}),
-		"rollno":forms.TextInput(attrs={
-			"class":"form-control",
-			"placeholder":"Enter your roll number",
-			}),
-		"collegename":forms.Select(attrs={
-			"class":"form-control",
-			}),
+		# "rollno":forms.TextInput(attrs={
+		# 	"class":"form-control",
+		# 	"placeholder":"Enter your roll number",
+		# 	}),
+		# "collegename":forms.Select(attrs={
+		# 	"class":"form-control",
+		# 	}),
 		}
 
 class SoF(forms.ModelForm):
